@@ -18,6 +18,7 @@
     "axios": "^0.18.0",
     "babel-polyfill": "^6.26.0",
     "dotenv": "^6.0.0",
+    "firebase-tools": "^4.2.1",
     "graphql": "^0.13.2",
     "graphql-tag": "^2.9.2",
     "lodash": "^4.17.10",

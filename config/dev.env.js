@@ -4,5 +4,6 @@ const prodEnv = require('./prod.env');
 require('dotenv').config();
 
 module.exports = merge(prodEnv, {
-  NODE_ENV: '"development"'
+  NODE_ENV: '"development"',
+  BASE_URL: process.env.BASE_URL
 });

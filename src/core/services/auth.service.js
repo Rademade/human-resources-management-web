@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 let axiosHttpLink = axios.create({
-  baseURL: '/api/api'
+  baseURL: process.env.BASE_URL
 });
 
 class Auth {

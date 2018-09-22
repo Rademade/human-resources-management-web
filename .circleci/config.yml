@@ -1,0 +1,13 @@
+version: 2
+jobs:
+  build:
+    docker:
+      - image: circleci/node:7.10
+
+    working_directory: ~/project
+
+    steps:
+      - checkout
+      - run: yarn install
+      - run: yarn build
+      - run: ./node_modules/firebase-tools/bin/firebase deploy --token=$FIREBASE_TOKEN

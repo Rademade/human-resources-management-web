@@ -2,7 +2,7 @@ import axios from 'axios';
 import authService from '@/core/services/auth.service';
 
 let axiosHttpLink = axios.create({
-  baseURL: '/api/api',
+  baseURL: process.env.BASE_URL,
   headers: {
     Authorization: {
       toString () {
