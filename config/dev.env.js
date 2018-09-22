@@ -5,5 +5,5 @@ require('dotenv').config();
 
 module.exports = merge(prodEnv, {
   NODE_ENV: '"development"',
-  BASE_URL: process.env.BASE_URL
+  BASE_URL: '"/api/api"'
 });
