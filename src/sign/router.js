@@ -1,6 +1,7 @@
 import signGuard from '@/core/guards/sign.guard';
 import SignIn from '@/sign/SignIn';
 import SignUp from '@/sign/SignUp';
+import SignSuccess from '@/sign/SignSuccess';
 import SignLayout from '@/sign/SignLayout';
 
 export const SIGN_ROUTER = {
@@ -18,6 +19,11 @@ export const SIGN_ROUTER = {
       path: 'in',
       name: 'SignIn',
       component: SignIn
+    },
+    {
+      path: 'success',
+      name: 'SignSuccess',
+      component: SignSuccess
     }
   ]
 };
