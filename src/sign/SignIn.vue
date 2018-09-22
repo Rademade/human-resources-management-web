@@ -5,7 +5,7 @@
         <input v-model="form.email" type="email" name="email" placeholder="Type Password" required>
       </InputWrapper>
       <InputWrapper :label="'Password'">
-        <input v-model="form.password" type="text" name="password" placeholder="Type Password" required>
+        <input v-model="form.password" type="password" name="password" placeholder="Type Password" required>
       </InputWrapper>
       <button type="submit">Sign In</button>
     </form>
