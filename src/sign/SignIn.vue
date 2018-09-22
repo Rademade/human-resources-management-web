@@ -1,8 +1,12 @@
 <template>
   <div class="sign">
-    <form v-on:submit.prevent="onSubmit()">
-      <input v-model="form.email" type="email" name="email">
-      <input v-model="form.password" type="text" name="password">
+    <form class="sign-form" v-on:submit.prevent="onSubmit()">
+      <InputWrapper :label="'Email'">
+        <input v-model="form.email" type="email" name="email" placeholder="Type Password" required>
+      </InputWrapper>
+      <InputWrapper :label="'Password'">
+        <input v-model="form.password" type="text" name="password" placeholder="Type Password" required>
+      </InputWrapper>
       <button type="submit">Sign In</button>
     </form>
   </div>
@@ -10,12 +14,17 @@
 
 <script>
 import authService from '@/core/services/auth.service';
+import InputWrapper from '@/core/components/InputWrapper';
 
 export default {
+  components: {
+    InputWrapper
+  },
   data () {
     return {
       form: {
-        email: null
+        email: '',
+        password: ''
       }
     };
   },
@@ -27,4 +36,9 @@ export default {
 };
 </script>
 
-<style lang="postcss" scoped></style>
+<style lang="postcss" scoped>
+  .sign-form {
+    margin: 0 auto;
+    max-width: 400px;
+  }
+</style>

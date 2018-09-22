@@ -1,28 +1,11 @@
-const getDefaultState = () => {
-  return {
-    email: null,
-    login_attempt_token: null,
-    session_id: null
-  };
-};
+import Vue from 'vue';
+import Vuex from 'vuex';
+import { DASHBOARD_STORE } from '@/dashboard/store';
+Vue.use(Vuex);
 
-const state = getDefaultState();
-
-const mutations = {
-};
-
-const actions = {
-};
-
-const getters = {
-};
-
-const SIGN_STORE = {
-  namespaced: true,
-  state: state,
-  mutations: mutations,
-  actions: actions,
-  getters: getters
-};
-
-export default SIGN_STORE;
+export default new Vuex.Store({
+  modules: {
+    dashboard: DASHBOARD_STORE
+  },
+  strict: process.env.NODE_ENV !== 'production'
+});

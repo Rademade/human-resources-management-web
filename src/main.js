@@ -2,7 +2,7 @@ import 'babel-polyfill';
 import Vue from 'vue';
 import App from '@/App';
 import router from '@/router';
-import store from '@/store';
+import store from '@/dashboard/store';
 require('./sprite.js');
 
 Vue.config.productionTip = false;

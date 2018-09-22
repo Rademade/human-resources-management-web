@@ -1,14 +1,7 @@
 import axios from 'axios';
 
 let axiosHttpLink = axios.create({
-  baseURL: '/api',
-  headers: {
-    Authorization: {
-      toString () {
-        return localStorage.getItem('token');
-      }
-    }
-  }
+  baseURL: '/api/api'
 });
 
 class Auth {
@@ -16,7 +9,7 @@ class Auth {
     this.axiosHttpLink = axiosHttpLink;
   }
   signUp (firstName, lastName, email, password) {
-    return this.axiosHttpLink.post('/api/users', {
+    return this.axiosHttpLink.post('/users', {
       firstName: firstName,
       lastName: lastName,
       email: email,
@@ -28,7 +21,7 @@ class Auth {
     });
   }
   signIn (email, password) {
-    return this.axiosHttpLink.post('/api/auth', {
+    return this.axiosHttpLink.post('/auth', {
       email: email,
       password: password
     }).then((response) => {
@@ -37,6 +30,13 @@ class Auth {
     }).catch((error) => {
       console.log(error.response);
     });
+  }
+  checkToken () {
+    return localStorage.getItem('token') !== null;
+  }
+  logout () {
+    localStorage.removeItem('token');
+    window.location.replace('/');
   }
 }
 
