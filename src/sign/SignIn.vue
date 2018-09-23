@@ -8,7 +8,7 @@
         <input v-model="form.password" type="password" name="password" placeholder="Type Password" required>
       </InputWrapper>
       <button type="submit">Sign In</button>
-      <a href="http://backend.rademade.me/auth/login">
+      <a href="https://human-resources-216715.appspot.com/auth/login">
         Google Login
       </a>
     </form>
