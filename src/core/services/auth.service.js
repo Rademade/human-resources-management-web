@@ -1,4 +1,5 @@
 import axios from 'axios';
+import router from '@/router';
 
 let axiosHttpLink = axios.create({
   baseURL: process.env.BASE_URL
@@ -26,7 +27,7 @@ class Auth {
       password: password
     }).then((response) => {
       localStorage.setItem('token', response.data.token);
-      console.log(response.data);
+      router.push({name: 'Dashboard'});
     }).catch((error) => {
       console.log(error.response);
     });
@@ -36,7 +37,7 @@ class Auth {
   }
   logout () {
     localStorage.removeItem('token');
-    window.location.replace('/');
+    router.push({name: 'SignIn'});
   }
 }
 
