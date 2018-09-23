@@ -15,12 +15,10 @@ const actions = {
 const getters = {
 };
 
-const DASHBOARD_STORE = {
+export const DASHBOARD_STORE = {
   namespaced: true,
   state: state,
   mutations: mutations,
   actions: actions,
   getters: getters
 };
-
-export default DASHBOARD_STORE;
