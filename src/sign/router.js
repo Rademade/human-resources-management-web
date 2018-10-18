@@ -5,7 +5,7 @@ import SignSuccess from '@/sign/SignSuccess';
 import SignLayout from '@/sign/SignLayout';
 
 export const SIGN_ROUTER = {
-  path: 'sign',
+  path: '/sign',
   name: 'Sign',
   redirect: {name: 'SignIn'},
   component: SignLayout,

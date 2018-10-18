@@ -1,5 +1,5 @@
 import axios from 'axios';
-import authService from '@/core/services/auth.service';
+import router from '@/router';
 
 let axiosHttpLink = axios.create({
   baseURL: process.env.BASE_URL,
@@ -14,7 +14,8 @@ let axiosHttpLink = axios.create({
 
 axiosHttpLink.interceptors.response.use(response => response, (error) => {
   if (error.response.status === 401) {
-    authService.logout();
+    localStorage.removeItem('token');
+    router.push({name: 'SignIn'});
   }
   return Promise.reject(error.response);
 });

@@ -8,15 +8,14 @@
         <input v-model="form.password" type="password" name="password" placeholder="Type Password" required>
       </InputWrapper>
       <button type="submit">Sign In</button>
-      <a href="https://human-resources-216715.appspot.com/auth/login">
-        Google Login
-      </a>
+      <!--<a href="https://human-resources-216715.appspot.com/auth/login">Google Login</a>-->
+      <a href="http://localhost:3000/auth/login">Google Login</a>
     </form>
   </div>
 </template>
 
 <script>
-import authService from '@/core/services/auth.service';
+import authService from '@/core/services/authService';
 import InputWrapper from '@/core/components/InputWrapper';
 
 export default {
